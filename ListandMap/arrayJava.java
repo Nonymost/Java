@@ -1,6 +1,12 @@
 import java.util.ArrayList;
 import java.util.Collections;
 
+// array.set()
+// array.get()
+// array.remove()
+// array.add()
+// array.clear()
+
 class arrayJava {
     public static void main(String[] args) {
         ArrayList<String> name = new ArrayList<String>();
