@@ -1,30 +1,29 @@
 import javax.swing.*;
-import java.awt.event.*;
+import java.awt.*;
 
-class App{
-    public static void main(String[]args){
-        JTextField tf = new JTextField();
-        JTextField tf1 = new JTextField();
-        JButton b1 = new JButton("+");
-        JButton b2 = new JButton("-");
-        JFrame f = new JFrame("App");
+public class App {
 
-        tf.setBounds(10,10,50,30);
-        tf1.setBounds(70,10,50,30);
+    public static void main(String[] args) {
+        EventQueue.invokeLater(() -> {
 
-        b1.setBounds(10,60,50,30);
-        b2.setBounds(70,60,50,30);
+            new SFrame();
+        });
+    }
+}
 
-        
-        f.add(tf);
-        f.add(tf1);
-        f.add(b1);
-        f.add(b2);
+class SFrame extends JFrame {
 
-        f.setSize(1000,1000);
-        f.setLayout(null);
-        f.setVisible(true);
-        
+    Toolkit kit = Toolkit.getDefaultToolkit();
+    Dimension screenSize = kit.getScreenSize();
+    Image img = new ImageIcon("img.png").getImage();
+    int x = screenSize.width / 2;
+    int y = screenSize.height / 2;
 
+    public SFrame() {
+        setIconImage(img);
+        setTitle("ZeyNoteBook");
+        setVisible(true);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setDefaultCloseOperation(EXIT_ON_CLOSE);
     }
 }
